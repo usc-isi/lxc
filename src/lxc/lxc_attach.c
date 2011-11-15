@@ -77,7 +77,13 @@ int main(int argc, char *argv[], char *envp[])
 	if (ret)
 		return ret;
 
+#if 1 // ISI
+	pid = atoi(my_args.name);
+	if (pid <= 0) 
+		pid = get_init_pid(my_args.name);
+#else
 	pid = get_init_pid(my_args.name);
+#endif
 	if (pid < 0) {
 		ERROR("failed to get the init pid");
 		return -1;

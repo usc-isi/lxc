@@ -1,0 +1,3 @@
+./configure --prefix=/usr --with-linuxdir=/root/rpmbuild/SOURCES/linux-2.6.38.2/
+make
+make install
